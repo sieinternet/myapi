@@ -8018,30 +8018,60 @@
 	<fval name="description"><value>inquiry &amp; transaction</value></fval>
 	<fval name="logMask"><value>3</value></fval>
 	<fval name="name"><value>Payment</value></fval>
+	<fval name="start"><value contentType="reference">2216018555298452626</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetHTTPStatusCode" entityPK="-8015478325007048715" parentPK="-4077535990277443412">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Reflector" entityPK="-5734496723667654771" parentPK="-4077535990277443412">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-203829523954360044</value></fval>
 	<fval name="httpResponseStatus"><value>200</value></fval>
-	<fval name="logFailure"><value>Failed to set the HTTP status code</value></fval>
-	<fval name="logFatal"><value>Error occurred while setting the HTTP status code. Error: ${circuit.exception}</value></fval>
+	<fval name="logFailure"><value>Failed to echo back the message</value></fval>
+	<fval name="logFatal"><value>Error occurred while echoing the message. Error: ${circuit.exception}</value></fval>
 	<fval name="logMask"><value>2</value></fval>
 	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Successfully set the HTTP status code</value></fval>
-	<fval name="name"><value>HTTP Status Code</value></fval>
+	<fval name="logSuccess"><value>Successfully echoed back the message</value></fval>
+	<fval name="name"><value>Reflect Message</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetHTTPStatusCode" entityPK="3469386330283435983" parentPK="-4077535990277443412">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ChangeMessageFilter" entityPK="1298999212651575384" parentPK="-4077535990277443412">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="body"><value>&lt;BalanceInquiryResp&gt;&#xD;&#xA;    &lt;proCode&gt;310020&lt;/proCode&gt;&#xD;&#xA;    &lt;traceNo&gt;372580&lt;/traceNo&gt;&#xD;&#xA;    &lt;reffNo&gt;112133373244&lt;/reffNo&gt;&#xD;&#xA;    &lt;currency&gt;360&lt;/currency&gt;&#xD;&#xA;    &lt;ovoId&gt;${http.querystring.ovoid}&lt;/ovoId&gt;&#xD;&#xA;    &lt;deviceId&gt;${http.querystring.deviceid}&lt;/deviceId&gt;&#xD;&#xA;    &lt;responseCode&gt;66&lt;/responseCode&gt;&#xD;&#xA;    &lt;errorCode&gt;ESB0011&lt;/errorCode&gt;&#xD;&#xA;&lt;/BalanceInquiryResp&gt;</value></fval>
+	<fval name="category"><value contentType="reference">-203829523954360044</value></fval>
+	<fval name="logFailure"><value>Failed in setting the message</value></fval>
+	<fval name="logFatal"><value>Error in setting the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in setting the message</value></fval>
+	<fval name="name"><value>Set Message</value></fval>
+	<fval name="outputContentType"><value>text\xml</value></fval>
+	<fval name="successNode"><value contentType="reference">7629233047399067876</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ExtractRESTAttributesFilter" entityPK="2216018555298452626" parentPK="-4077535990277443412">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">471349616765412308</value></fval>
+	<fval name="decode"><value>0</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>Extract REST Request Attributes</value></fval>
+	<fval name="queryAttributePrefix"><value>params.query</value></fval>
+	<fval name="successNode"><value contentType="reference">6491730126723304570</value></fval>
+	<fval name="useHeaders"><value>0</value></fval>
+	<fval name="useQueryString"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetHTTPVerbFilter" entityPK="6491730126723304570" parentPK="-4077535990277443412">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-203829523954360044</value></fval>
-	<fval name="httpResponseStatus"><value>402</value></fval>
-	<fval name="logFailure"><value>Failed to set the HTTP status code</value></fval>
-	<fval name="logFatal"><value>Error occurred while setting the HTTP status code. Error: ${circuit.exception}</value></fval>
+	<fval name="httpVerb"><value>POST</value></fval>
+	<fval name="logFailure"><value>Failed in setting the HTTP verb for the message</value></fval>
+	<fval name="logFatal"><value>Error in setting the HTTP verb for the message. Error: ${circuit.exception}</value></fval>
 	<fval name="logMask"><value>2</value></fval>
 	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Successfully set the HTTP status code</value></fval>
-	<fval name="name"><value>HTTP Status Code{1}</value></fval>
+	<fval name="logSuccess"><value>Success in setting the HTTP verb for the message</value></fval>
+	<fval name="name"><value>Set HTTP Verb</value></fval>
+	<fval name="successNode"><value contentType="reference">1298999212651575384</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ConnectToURLFilter" entityPK="5330463630552409246" parentPK="-4077535990277443412">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ConnectToURLFilter" entityPK="7629233047399067876" parentPK="-4077535990277443412">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="body"><value>${content.body}</value></fval>
 	<fval name="caCerts"></fval>
@@ -8049,7 +8079,6 @@
 	<fval name="ciphers"><value>FIPS:!SSLv3:!aNULL</value></fval>
 	<fval name="closePreviousConnection"><value>0</value></fval>
 	<fval name="connectionFailurePolicy"><value contentType="reference">-1</value></fval>
-	<fval name="failureNode"><value contentType="reference">3469386330283435983</value></fval>
 	<fval name="forwardClientHostHeader"><value>0</value></fval>
 	<fval name="handleRedirects"><value>1</value></fval>
 	<fval name="loadResponseBody"><value>0</value></fval>
@@ -8059,7 +8088,7 @@
 	<fval name="logMaskType"><value>SERVICE</value></fval>
 	<fval name="logSuccess"><value>Successfully routed request to endpoint</value></fval>
 	<fval name="method"><value>${http.request.verb}</value></fval>
-	<fval name="name"><value>Inquiry to Back End</value></fval>
+	<fval name="name"><value>http://192.168.111.26:7082/ovoesbConnect to URL</value></fval>
 	<fval name="performRetries"><value>0</value></fval>
 	<fval name="profile"><value contentType="reference">-1</value></fval>
 	<fval name="profileInUse"><value>0</value></fval>
@@ -8087,12 +8116,12 @@
 	<fval name="stickyCookieName"><value>unnamed</value></fval>
 	<fval name="stickyCookiePath"><value></value></fval>
 	<fval name="stickyness"><value>0</value></fval>
-	<fval name="successNode"><value contentType="reference">-8015478325007048715</value></fval>
+	<fval name="successNode"><value contentType="reference">-5734496723667654771</value></fval>
 	<fval name="transparentProxy"><value>0</value></fval>
 	<fval name="url"><value>${http.request.uri}</value></fval>
 	<fval name="useRootCerts"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SaveToFileFilter" entityPK="-1735877754475011182" parentPK="5330463630552409246">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SaveToFileFilter" entityPK="-8843591296992579308" parentPK="7629233047399067876">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-203829523954360044</value></fval>
 	<fval name="directory"><value>${environment.VINSTDIR}/message-archive</value></fval>
