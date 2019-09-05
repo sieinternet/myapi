@@ -9555,6 +9555,30 @@
 	<fval name="description"><value>Transfer pemindahbukuan</value></fval>
 	<fval name="logMask"><value>3</value></fval>
 	<fval name="name"><value>Transfer</value></fval>
+	<fval name="start"><value contentType="reference">7604868857581409857</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Reflector" entityPK="-5250709258084327358" parentPK="-2330905169676144936">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-203829523954360044</value></fval>
+	<fval name="httpResponseStatus"><value>200</value></fval>
+	<fval name="logFailure"><value>Failed to echo back the message</value></fval>
+	<fval name="logFatal"><value>Error occurred while echoing the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Successfully echoed back the message</value></fval>
+	<fval name="name"><value>Reflect Message</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetHTTPVerbFilter" entityPK="5191457147504447680" parentPK="-2330905169676144936">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-203829523954360044</value></fval>
+	<fval name="httpVerb"><value>POST</value></fval>
+	<fval name="logFailure"><value>Failed in setting the HTTP verb for the message</value></fval>
+	<fval name="logFatal"><value>Error in setting the HTTP verb for the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in setting the HTTP verb for the message</value></fval>
+	<fval name="name"><value>Set HTTP Verb</value></fval>
+	<fval name="successNode"><value contentType="reference">-5250709258084327358</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ExtractRESTAttributesFilter" entityPK="7604868857581409857" parentPK="-2330905169676144936">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
@@ -9567,6 +9591,7 @@
 	<fval name="logSuccess"><value>Filter passed</value></fval>
 	<fval name="name"><value>Extract REST Request Attributes</value></fval>
 	<fval name="queryAttributePrefix"><value>params.query</value></fval>
+	<fval name="successNode"><value contentType="reference">5191457147504447680</value></fval>
 	<fval name="useHeaders"><value>0</value></fval>
 	<fval name="useQueryString"><value>1</value></fval>
 </entity>
